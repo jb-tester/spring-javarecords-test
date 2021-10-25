@@ -1,6 +1,7 @@
 package com.mytests.spring.springjavarecordstest;
 
 import com.mytests.spring.springjavarecordstest.qualifiedInjectionIntoRecord.Record12;
+import com.mytests.spring.springjavarecordstest.spelTest.UseRecordWithMembers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,6 +22,7 @@ ApplicationContext ctx;
         Record12 r = ctx.getBean(Record12.class);
         System.out.println(r.b1().getId());
         System.out.println(r.bean2().getId());
-
+        UseRecordWithMembers useRecordWithMembers = ctx.getBean(UseRecordWithMembers.class);
+        useRecordWithMembers.display();
     }
 }
