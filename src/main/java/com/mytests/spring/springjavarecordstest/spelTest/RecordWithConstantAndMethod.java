@@ -7,8 +7,12 @@ package com.mytests.spring.springjavarecordstest.spelTest;
  * *
  */
 public record RecordWithConstantAndMethod(String param1, String param2) {
+    public RecordWithConstantAndMethod(String param1, String param2) {
+        this.param1 = param1;
+        this.param2 = param2;
+    }
 
-public static final String MYCONST = "constant from record";
+    public static final String MYCONST = "constant from record";
 public String someMethod(){
     return (param1+" "+param2).toUpperCase();
 }
